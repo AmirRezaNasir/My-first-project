@@ -69,7 +69,7 @@ class SearchList(ListView):
 
 	def get_queryset(self):
 		search = self.request.GET.get('q')
-		return Article.objects.filter(Q(description__icontains=search) | Q(title__icontains=search)).published()
+		return Article.objects.filter(Q(description__icontains=search) | Q(title__icontains=search))
 
 
 	def get_context_data(self, **kwargs):
